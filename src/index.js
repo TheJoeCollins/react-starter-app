@@ -1,12 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider, connect } from "react-redux";
+import { applyMiddleware, createStore } from "redux";
+import { getTopStories } from "./reducers/hackernews/HackerReducer";
+import { HackerReducer } from "./reducers/hackernews/HackerReducer";
+import logger from "redux-logger";
+import thunk from "redux-thunk";
 
-const getData = () => {
-  return new Promise((resolve, reject) => {});
-};
+//Sample Project Demo React-Redux
+//Hacker News Api - Real Time Data
+//React-Redux
 
-//Named Export
-export default class App extends React.Component {
+const middleware = applyMiddleware(thunk, logger);
+const store = createStore(HackerReducer, middleware);
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount = () => {
+    this.props.getStories();
+  };
+
   render() {
     return (
       <div>
@@ -16,4 +31,28 @@ export default class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.querySelector("#main"));
+const mapState = state => {
+  return {
+    loading: state.loading,
+    topStories: state.topStoriesIds
+  };
+};
+const mapDisp = dispatch => {
+  return {
+    getStories: () => {
+      dispatch(getTopStories());
+    }
+  };
+};
+
+const AppMain = connect(
+  mapState,
+  mapDisp
+)(App);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <AppMain />
+  </Provider>,
+  document.querySelector("#main")
+);

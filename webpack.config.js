@@ -12,6 +12,7 @@ module.exports = {
     hot: true,
     host: "localhost"
   },
+  devtool: "inline-source-map",
   plugins: [
     new CleanWebpackPlugin(["dist"]),
     new HtmlWebpackPlugin({
