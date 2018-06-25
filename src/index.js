@@ -3,6 +3,11 @@ import ReactDOM from "react-dom";
 import StateComponent from "./components/StateComponent";
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount = () => {};
+
   render() {
     return (
       <div>
@@ -12,4 +17,4 @@ export default class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.querySelector("#main"));
+ReactDOM.render(<AppMain />, document.querySelector("#main"));
