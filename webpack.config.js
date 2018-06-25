@@ -49,5 +49,8 @@ module.exports = {
         use: ["file-loader"]
       }
     ]
+  },
+  performance: {
+    hints: false
   }
 };

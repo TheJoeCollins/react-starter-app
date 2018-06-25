@@ -1,16 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-
-
-
-
+import StateComponent from "./components/StateComponent";
 
 export default class App extends React.Component {
   render() {
     return (
       <div>
-        <h1> This works </h1>
+        <StateComponent />
       </div>
     );
   }
