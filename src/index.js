@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const getData = () => {
-  return new Promise((resolve, reject) => {});
-};
 
-//Named Export
+
+
+
+
 export default class App extends React.Component {
   render() {
     return (
