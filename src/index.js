@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import StateComponent from "./components/StateComponent";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -11,10 +10,10 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <StateComponent />
+        <h1> Hello World </h1>
       </div>
     );
   }
 }
 
-ReactDOM.render(<AppMain />, document.querySelector("#main"));
+ReactDOM.render(<App />, document.querySelector("#main"));
