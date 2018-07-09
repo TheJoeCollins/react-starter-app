@@ -21,7 +21,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="flex-container">
-        <div className="body">
+        <div className="header">
           <div className="flex-one" />
           <Header
             title={this.state.title}

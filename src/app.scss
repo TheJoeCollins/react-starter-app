@@ -1,7 +1,7 @@
 $font-stack: Helvetica, sans-serif;
-$primary-color: #333;
+$primary-color: rgba(150, 178, 204, 0.719);
 
-.body {
+.header {
   font: 100% $font-stack;
   background-color: $primary-color;
 }

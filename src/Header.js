@@ -7,9 +7,9 @@ export default class Header extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h1> {this.props.title}</h1>
-        <h2> {this.props.text}</h2>
+      <div className="flex-container">
+        <h1 className="flex-one"> {this.props.title}</h1>
+        <h2 className="flex-one"> {this.props.text}</h2>
         <input
           type="text"
           name="title"
