@@ -1,32 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import StateComponent from "./StateComponent";
-
+import Header from "./Header";
 import "./style.css";
-
-const Header = ({ name }) => {
-  return <h1>{name}</h1>;
-};
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      wordOne: "Word One",
-      wordTwo: "Word Two"
+      title: "Title",
+      text: "text"
     };
   }
-  componentDidMount = () => {};
 
-  saySomething = () => {
-    console.log("Say Something");
+  _changeText = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   };
 
   render() {
     return (
       <div className="flex-container">
-        <div className="flex-one">
-          <StateComponent />
+        <div className="body">
+          <div className="flex-one" />
+          <Header
+            title={this.state.title}
+            text={this.state.text}
+            onChange={this._changeText}
+          />
         </div>
       </div>
     );
